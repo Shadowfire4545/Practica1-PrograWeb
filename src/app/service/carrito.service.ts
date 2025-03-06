@@ -19,7 +19,9 @@ export class CarritoService {
         let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<recibo>\n`;
         xml += `    <nombreTienda>Tienda Componentes PC</nombreTienda>\n`;
         xml += `    <fecha>${new Date().toISOString()}</fecha>\n`;
-        xml += `    <total>${this.carrito.reduce((acc, producto) => acc + producto.precio, 0)}</total>\n\n`;
+        xml += `    <subtotal>${this.carrito.reduce((acc, producto) => acc + producto.precio, 0)}</subtotal>\n`;
+        const totalConIVA = this.carrito.reduce((acc, producto) => acc + producto.precio, 0) * 0.16;
+        xml += `    <total>${totalConIVA}</total>\n\n`;
 
         this.carrito.forEach((producto) => {
             xml += `    <producto id="${producto.id}">\n`;
