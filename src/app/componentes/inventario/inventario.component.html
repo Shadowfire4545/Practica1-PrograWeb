@@ -3,6 +3,32 @@
     <h2>Gestión de Inventario</h2>
 
     <div class="agregar-edicion">
+
+      <div class="formulario-agregar">
+        <h3>Agregar Nuevo Producto</h3>
+        <div class="formulario">
+          <label for="new-nombre">Nombre:</label>
+          <input type="text" id="new-nombre" [(ngModel)]="nuevoProducto.nombre" required>
+        </div>
+        <div class="formulario">
+          <label for="new-precio">Precio:</label>
+          <input type="number" id="new-precio" [(ngModel)]="nuevoProducto.precio" required>
+        </div>
+        <div class="formulario">
+          <label for="new-cantidad">Cantidad:</label>
+          <input type="number" id="new-cantidad" [(ngModel)]="nuevoProducto.cantidad" required>
+        </div>
+        <div class="formulario">
+          <label for="new-imagen">URL de la imagen:</label>
+          <input type="text" id="new-imagen" [(ngModel)]="nuevoProducto.imagen">
+        </div>
+        <div class="preview" *ngIf="nuevoProducto.imagen">
+          <img [src]="nuevoProducto.imagen" alt="Vista previa">
+        </div>
+        <button (click)="agregarProducto()" class="btn-agregar">Agregar Producto</button>
+      </div>
+      
+      
     <div *ngIf="modoEdicion && productoSeleccionado" class="formulario-edicion">
       <h3>Editar Producto</h3>
       <div class="formulario">
@@ -21,37 +47,13 @@
         <label for="edit-imagen">URL de imagen:</label>
         <input type="text" id="edit-imagen" [(ngModel)]="productoSeleccionado.imagen">
       </div>
-      <div class="preview" *ngIf="productoSeleccionado.imagen">
-        <img [src]="productoSeleccionado.imagen" alt="Vista previa">
+      <div  *ngIf="productoSeleccionado.imagen">
+        <img class="preview"  [src]="productoSeleccionado.imagen" alt="Vista previa">
       </div>
-      <div class="form-actions">
-        <button (click)="actualizarProducto()" class="btn-guardar">Guardar Cambios</button>
+      <div class="formulario">
+        <button (click)="actualizarProducto()" class="btn">Guardar</button>
         <button (click)="cancelarEdicion()" class="btn-cancelar">Cancelar</button>
       </div>
-    </div>
-    
-    <div class="formulario-agregar">
-      <h3>Agregar Nuevo Producto</h3>
-      <div class="formulario">
-        <label for="new-nombre">Nombre:</label>
-        <input type="text" id="new-nombre" [(ngModel)]="nuevoProducto.nombre" required>
-      </div>
-      <div class="formulario">
-        <label for="new-precio">Precio:</label>
-        <input type="number" id="new-precio" [(ngModel)]="nuevoProducto.precio" required>
-      </div>
-      <div class="formulario">
-        <label for="new-cantidad">Cantidad:</label>
-        <input type="number" id="new-cantidad" [(ngModel)]="nuevoProducto.cantidad" required>
-      </div>
-      <div class="formulario">
-        <label for="new-imagen">URL de la imagen:</label>
-        <input type="text" id="new-imagen" [(ngModel)]="nuevoProducto.imagen">
-      </div>
-      <div class="preview" *ngIf="nuevoProducto.imagen">
-        <img [src]="nuevoProducto.imagen" alt="Vista previa">
-      </div>
-      <button (click)="agregarProducto()" class="btn-agregar">Agregar Producto</button>
     </div>
   </div>
 

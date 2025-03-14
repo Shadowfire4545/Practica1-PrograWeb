@@ -4,18 +4,18 @@
         <nombre>Laptop</nombre>
         <precio>1200</precio>
         <cantidad>2</cantidad>
-        <imagen></imagen>
+        <imagen>https://laptopmedia.com/wp-content/uploads/2022/10/c08280389.jpg</imagen>
     </producto>
     <producto id="2">
         <nombre>Router</nombre>
         <precio>3000</precio>
         <cantidad>2</cantidad>
-        <imagen></imagen>
+        <imagen>https://n1g.cl/Home/9140-large_default/router-dual-wan-asus-rog-rapture-gt-ax6000-eva-edition-160mhz-wifi-6-gaming-router-sharer-neon-genesis-evangelion-asus-x-eva.jpg</imagen>
     </producto>
     <producto id="3">
         <nombre>PC</nombre>
         <precio>10000</precio>
         <cantidad>2</cantidad>
-        <imagen></imagen>
+        <imagen>https://http2.mlstatic.com/D_NQ_NP_843758-MLM50776113172_072022-F.jpg</imagen>
     </producto>
 </productos>

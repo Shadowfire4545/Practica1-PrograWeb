@@ -8,7 +8,9 @@
         <p>Precio: ${{producto.precio}}</p>
         <button (click) = "agregarAlCarrito(producto)">Agregar</button>
     </div>
-    <button class="producto" (click) = "irAlCarrito()">Carrito</button>
-    <button class="Inventario" (click)="irAlInventario()">Inventario</button>
+</div>
 
+<div class="btn-group">
+    <button class="producto" (click) = "irAlCarrito()">Carrito</button>
+    <button class="producto" (click)="irAlInventario()">Inventario</button>
 </div>
