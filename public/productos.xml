@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+    <producto id="1">
+        <nombre>Laptop</nombre>
+        <precio>1200</precio>
+        <cantidad>2</cantidad>
+        <imagen></imagen>
+    </producto>
+    <producto id="2">
+        <nombre>Router</nombre>
+        <precio>3000</precio>
+        <cantidad>2</cantidad>
+        <imagen></imagen>
+    </producto>
+    <producto id="3">
+        <nombre>PC</nombre>
+        <precio>10000</precio>
+        <cantidad>2</cantidad>
+        <imagen></imagen>
+    </producto>
+</productos>

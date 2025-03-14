@@ -4,6 +4,7 @@ import { ProductoService } from '../../service/producto.service';
 import { CommonModule } from '@angular/common';
 import { CarritoService } from '../../service/carrito.service';
 import { Router } from '@angular/router';
+import { lastValueFrom, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-producto',
@@ -13,14 +14,14 @@ import { Router } from '@angular/router';
 })
 
 export class ProductoComponent implements OnInit {
-  public productos: Producto[] = [];
+  public productos: any;
   constructor(
     private productoService: ProductoService,
     private carritoService: CarritoService,
     private router:Router
   ) { }
-  ngOnInit(): void {
-    this.productos = this.productoService.obtenerProducto();
+  async ngOnInit() {
+    this.productos = await lastValueFrom(this.productoService.obtenerProducto()).then((prods) => prods);
   }
 
   agregarAlCarrito(producto:any) {
@@ -29,5 +30,9 @@ export class ProductoComponent implements OnInit {
 
   irAlCarrito() {
     this.router.navigate(['/carrito']);
+  }
+
+  irAlInventario() {
+    this.router.navigate(['/inventario']);
   }
 }
